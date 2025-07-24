@@ -36,17 +36,27 @@ services:
     volumes:
       - ./nginx/logs:/var/log/nginx
 
-  logstash:
-    image: docker.elastic.co/logstash/logstash:7.17.14
-    container_name: logstash
-    ports:
-      - "5044:5044"
+#  logstash:
+#    image: docker.elastic.co/logstash/logstash:7.17.14
+#    container_name: logstash
+#    ports:
+#      - "5044:5044"
+#    volumes:
+#      - ./logstash/pipeline:/usr/share/logstash/pipeline
+#      - ./nginx/logs:/usr/share/logstash/nginx-logs
+#    depends_on:
+#      - elasticsearch
+#      - nginx
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.17.14
+    container_name: filebeat
+    user: root
     volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-      - ./nginx/logs:/usr/share/logstash/nginx-logs
+      - ./nginx/logs:/var/log/nginx:ro
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
     depends_on:
       - elasticsearch
-      - nginx
 
 volumes:
   esdata:

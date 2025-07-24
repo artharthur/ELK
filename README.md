@@ -41,3 +41,16 @@ GET /_cluster/health?pretty
 ### Скриншот интерфейса Discover
 
 ![Nginx Logs in Kibana](./screenshots/kibana-nginx-logs.png)
+
+---
+
+## Задание 4: Filebeat
+
+- Logstash отключён
+- Установлен Filebeat и настроен на чтение `access.log` от Nginx
+- Логи успешно передаются напрямую в Elasticsearch
+- В Kibana создан индекс `filebeat-*` и отображаются данные
+
+### Скриншот интерфейса Discover
+
+![Filebeat Nginx Logs](./screenshots/kibana-filebeat-nginx.png)
