@@ -14,3 +14,18 @@ curl -X GET 'localhost:9200/_cluster/health?pretty'
 ### Скриншот результата
 
 ![Cluster Health](./screenshots/elasticsearch-cluster-health.png)
+
+---
+
+## Задание 2: Kibana
+
+- Установлена Kibana через `docker-compose`
+- Интерфейс Kibana доступен на http://localhost:5601
+- В разделе **Dev Tools** выполнен запрос к кластеру:
+
+http
+GET /_cluster/health?pretty
+
+### Скриншот результата
+
+![Kibana Cluster Health](./screenshots/kibana-cluster-health.png)
