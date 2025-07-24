@@ -29,3 +29,15 @@ GET /_cluster/health?pretty
 ### Скриншот результата
 
 ![Kibana Cluster Health](./screenshots/kibana-cluster-health.png)
+
+---
+
+## Задание 3: Logstash + Nginx
+
+- Установлены и запущены Logstash и Nginx через `docker-compose`
+- Logstash читает `access.log` и передаёт данные в Elasticsearch
+- В Kibana создан индекс `nginx-logs`, данные визуализируются
+
+### Скриншот интерфейса Discover
+
+![Nginx Logs in Kibana](./screenshots/kibana-nginx-logs.png)
